@@ -4,3 +4,77 @@
 ✦ theme-light — класс светлой темы
 ✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
 */
+
+:root.theme-light {
+  --weight-text: 400;
+  --weight-title: 700;
+
+  --color-main: #000000;
+  --color-accent: #ffffff;
+
+  --bkg-grad: repeating-linear-gradient(
+      90deg,
+      #d3d3d3 0 2px,
+      rgb(0 0 0 / 0) 2px 4px
+    ),
+    repeating-linear-gradient(180deg, #d3d3d3 0 2px, rgb(0 0 0 / 0) 2px 4px),
+    linear-gradient(180deg, #e7e7e7 0%, #e7e7e7 0.01%, #1a1a1a 100%);
+}
+
+:root.theme-dark {
+  --weight-text: 465;
+  --weight-title: 785;
+
+  --color-main: #00cc14;
+  --color-accent: #000000;
+
+  --bkg-grad: repeating-linear-gradient(
+      90deg,
+      #000 0 2px,
+      rgb(0 0 0 / 0) 2px 4px
+    ),
+    repeating-linear-gradient(180deg, #000 0 2px, rgb(0 0 0 / 0) 2px 4px),
+    linear-gradient(180deg, #007f0c 0%, #004306 100%);
+}
+
+:root.theme-dark .button__text {
+  color: var(--color-main);
+}
+
+:root.theme-dark .floppy {
+  fill: var(--color-main);
+}
+
+:root.theme-dark .wrapper-floppy {
+  fill: var(--color-main);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --weight-text: 465;
+    --weight-title: 785;
+
+    --color-main: #00cc14;
+    --color-accent: #000000;
+
+    --bkg-grad: repeating-linear-gradient(
+        90deg,
+        #000 0 2px,
+        rgb(0 0 0 / 0) 2px 4px
+      ),
+      repeating-linear-gradient(180deg, #000 0 2px, rgb(0 0 0 / 0) 2px 4px),
+      linear-gradient(180deg, #007f0c 0%, #004306 100%);
+  }
+
+  :root:not(.theme-light) .button__text {
+    color: var(--color-main);
+  }
+
+  :root:not(.theme-light) .floppy {
+    fill: var(--color-main);
+  }
+
+  :root:not(.theme-light) .wrapper-floppy {
+    fill: var(--color-main);
+  }
+}

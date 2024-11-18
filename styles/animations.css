@@ -12,3 +12,154 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
+
+.theme-menu__button:hover {
+  transition: opacity 0.3s ease;
+  opacity: 0.6;
+}
+
+.theme-menu__button:focus {
+  outline: none;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.theme-menu__button:focus-visible::after {
+  transform: scaleX(1);
+  opacity: 1;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.theme-menu__button[disabled]::before {
+  content: "▶";
+  position: absolute;
+  left: -20px;
+  animation: header-pointer 0.5s infinite ease-in-out alternate;
+}
+
+@keyframes header-pointer {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(4px);
+  }
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border: 2px solid var(--color-main);
+  transition: border 0.3s ease;
+}
+
+.button-animation::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: var(--color-main);
+  width: 100%;
+  height: 100%;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+  z-index: 1;
+}
+
+.button-animation:focus {
+  outline: none;
+}
+
+.button-animation:focus-visible {
+  box-shadow: 2px 2px 0 var(--color-main);
+  transition: box-shadow 0.3s ease;
+}
+
+.button-animation:hover::before {
+  transform: scaleX(1);
+  transition: transform 0.5s ease-in-out;
+}
+
+.sparks {
+  opacity: 0;
+}
+
+.contour {
+  fill: var(--color-main);
+  transition: fill 0.1s linear;
+}
+
+.main-body {
+  fill: var(--color-accent);
+  transition: fill 0.3s linear;
+}
+
+.core {
+  fill: var(--color-accent);
+  transition: fill 0.3s 0.03s linear;
+}
+
+.card__icon-button:hover .main-body {
+  fill: var(--color-main);
+  transition: fill 0.3s 0.05s linear;
+}
+
+.card__icon-button:hover .core {
+  fill: var(--color-main);
+  transition: fill 0.3s linear;
+}
+
+.card__icon-button:active .main-body {
+  fill: var(--color-heart);
+  transition: fill 0.3s 0.05s linear;
+}
+
+.card__icon-button:active .core {
+  fill: var(--color-heart);
+  transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--color-heart);
+  transition: fill 0.3s 0.05s linear;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--color-heart);
+  transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--color-heart);
+  transition: fill 0.3s 0.06s linear;
+}
+
+.like-icon.is-liked .heart {
+  animation: scaling 0.3s ease-in 0.1s 1 alternate;
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparkling 0.3s ease-in 0.3s 1 alternate;
+}
+
+@keyframes scaling {
+  from {
+    transform: scale(1);
+    transform-origin: center;
+  }
+  to {
+    transform: scale(1.5);
+    transform-origin: center;
+  }
+}
+
+@keyframes sparkling {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

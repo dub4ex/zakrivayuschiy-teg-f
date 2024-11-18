@@ -15,6 +15,343 @@
 */
 
 .page {
+  font-family: var(--font-main), sans-serif;
+  font-variation-settings: "wght" var(--weight-text);
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  color: var(--color-main);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: var(--bkg-grad);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.block-sizing {
+  inline-size: var(--block-sizing);
+}
+
+.header {
+  margin-block-start: 100px;
+  background-color: var(--color-accent);
+  border: 2px solid var(--color-main);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block-start: var(--padding-header-top);
+  padding-block-end: 25px;
+  text-transform: uppercase;
+  font-family: var(--font-accent), sans-serif;
+  margin-block-end: 100px;
+}
+
+.header__title {
+  font-weight: 400;
+  font-size: var(--font-size-heading-l);
+  line-height: var(--font-size-heading-l);
+  margin-block-end: 20px;
+}
+
+.header__paragraph {
+  font-weight: 400;
+  font-size: var(--font-size-heading-m);
+  line-height: var(--font-size-heading-m);
+  margin-block-end: 23px;
+}
+
+.header__theme-menu {
+  padding-left: 18px;
+}
+
+.theme-menu__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.theme-menu__button {
+  position: relative;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.theme-menu__button[disabled] {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.theme-menu__button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: var(--color-main);
+  width: 100%;
+  height: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  opacity: 0;
+}
+
+.article {
+  background-color: var(--color-accent);
+  border: 2px solid var(--color-main);
+  display: flex;
+  flex-direction: column;
+  margin-block-end: 50px;
+}
+
+.article + .article {
+  margin-block-end: 50px;
+}
+
+.article__title {
+  margin-inline: 10px;
+  margin-block-start: 5px;
+  margin-block-end: 4px;
+  font-variation-settings: "wght" var(--weight-title);
+  font-size: 18px;
+  line-height: 21.78px;
+}
+
+.article__image-wrapper {
+  margin-block-end: 25px;
+  position: relative;
+  border-block: 2px solid var(--color-main);
+}
+
+.decoration-text {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  color: var(--color-main);
+  font-family: var(--font-accent), sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  text-shadow: 1px 1px var(--color-accent), -1px -1px var(--color-accent),
+    1px -1px var(--color-accent), -1px 1px var(--color-accent);
+  opacity: 0.5;
+}
+
+@supports (-webkit-text-stroke: 1px white) or (text-stroke: 1px white) {
+  .decoration-text {
+    -webkit-text-stroke: 1px var(--color-accent);
+    text-stroke: 1px var(--color-accent);
+    text-shadow: none;
+  }
+}
+
+.article__pic {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.picture-1 {
+  filter: none;
+}
+
+.picture-2 {
+  filter: sepia(30%) grayscale(70%);
+}
+
+.picture-3 {
+  filter: saturate(400%);
+}
+
+.picture-4 {
+  filter: hue-rotate(40deg);
+}
+
+.picture-5 {
+  filter: invert(100%) contrast(50%);
+}
+
+.picture-6 {
+  filter: sepia(80%);
+}
+
+.picture-7 {
+  filter: blur(10px);
+}
+
+.picture-8 {
+  filter: hue-rotate(90deg) blur(1px) contrast(50%) saturate(125%);
+}
+
+.article__text {
+  padding-inline: 25px;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.article__text:not(:last-of-type) {
+  margin-block-end: 27px;
+}
+
+.article__text:last-of-type {
+  margin-block-end: 25px;
+}
+
+.article__buttons {
+  display: flex;
+  margin-block-end: 25px;
+  margin-inline-end: 25px;
+  justify-content: flex-end;
+  height: 38px;
+  gap: 5px;
+}
+
+.card__icon-button {
+  background-color: var(--color-accent);
+  border: 2px solid var(--color-accent);
+}
+
+.card__like-button-align {
+  min-width: 130px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-animation {
+  background-color: var(--color-accent);
+  border: 2px solid var(--color-main);
+  position: relative;
+}
+
+.button__text {
+  font-family: var(--font-accent), sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 12.6px;
+  color: var(--color-accent);
+  position: relative;
+  z-index: 2;
+  mix-blend-mode: difference;
+}
+
+.footer-button {
+  width: 335px;
+  min-height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-block-end: 103px;
+  background-color: var(--color-accent);
+  border: 2px solid var(--color-main);
+  position: relative;
+}
+
+button .wrapper-floppy {
+  fill: var(--color-accent);
+  position: relative;
+  z-index: 2;
+  mix-blend-mode: difference;
+  height: 21px;
+}
+
+button .floppy {
+  color: var(--color-accent);
+  position: relative;
+  z-index: 2;
+  mix-blend-mode: difference;
+}
+
+#dialog-id {
+  padding: 30px;
+  width: 353px;
+  background-color: var(--color-accent);
+  border: 2px solid var(--color-main);
+}
+
+.dialog-heading {
+  display: flex;
+  gap: 20px;
+  margin-block-end: 30px;
+  min-height: 63px;
+  align-items: center;
+}
+
+.dialog-icon {
+  height: 100%;
+  width: 81px;
+}
+
+.dialog__title {
+  font-family: var(--font-accent), sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  text-transform: uppercase;
+  color: var(--color-main);
+}
+
+#dialog-id button {
+  width: 100%;
+  background-color: var(--color-accent);
+  border: 2px solid var(--color-main);
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#dialog-id::backdrop {
+  background: rgba(0, 0, 0, 0.75);
+}
+
+@media (width <=375px) {
+  .page {
+    display: block;
+  }
+
+  .block-sizing {
+    width: 100%;
+  }
+
+  .header__theme-menu {
+    padding-left: 21px;
+  }
+
+  .decoration-text {
+    top: 23px;
+    right: 11px;
+  }
+
+  .footer-button {
+    margin-block-end: 100px;
+    flex-direction: column;
+    margin-right: auto;
+    margin-left: auto;
+    width: 310px;
+    min-height: 84px;
+  }
+
+  button .wrapper-floppy {
+    height: 28px;
+  }
+
+  #dialog-id {
+    width: 341px;
+    padding: 30px 40px;
+  }
+
+  .dialog-heading {
+    gap: 17px;
+  }
+
+  .dialog-icon {
+    width: 95px;
+  }
 }
