@@ -5,7 +5,7 @@
   --padding-header-top: clamp(7.5rem, 7.147rem + 1.504vw, 8.5rem);
 
   --font-main: "Inter-Variable";
-  --font-accent: "PressStart2P-Regular";
+  --font-accent: "PressStart2P";
 
   --font-size-heading-l: clamp(3.063rem, 2.709rem + 1.504vw, 4.063rem);
   --font-size-heading-m: clamp(0.875rem, 0.676rem + 0.846vw, 1.438rem);
@@ -13,8 +13,6 @@
   --weight-text: 400;
   --weight-title: 700;
 
-  --color-main: #000000;
-  --color-accent: #ffffff;
   --bkg-grad: repeating-linear-gradient(
       90deg,
       #d3d3d3 0 2px,
@@ -24,4 +22,7 @@
     linear-gradient(180deg, #e7e7e7 0%, #e7e7e7 0.01%, #1a1a1a 100%);
 
   --color-heart: #ff0000;
+  --color-light: #ffffff;
+  --color-dark: #000000;
+  --color-green: #00cc14;
 }

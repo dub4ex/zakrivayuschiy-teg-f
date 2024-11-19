@@ -14,20 +14,17 @@
 */
 
 .theme-menu__button:hover {
-  transition: opacity 0.3s ease;
   opacity: 0.6;
 }
 
 .theme-menu__button:focus {
   outline: none;
   opacity: 0.6;
-  transition: opacity 0.3s ease;
 }
 
 .theme-menu__button:focus-visible::after {
   transform: scaleX(1);
   opacity: 1;
-  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .theme-menu__button[disabled]::before {
@@ -51,21 +48,11 @@
 }
 
 .card__icon-button:focus-visible {
-  border: 2px solid var(--color-main);
-  transition: border 0.3s ease;
+  border: 2px solid var(--main-color);
 }
 
-.button-animation::before {
-  content: "";
-  display: block;
-  position: absolute;
-  background-color: var(--color-main);
-  width: 100%;
-  height: 100%;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.5s ease-in-out;
-  z-index: 1;
+.button-animation:hover::after {
+  transform: scaleX(1);
 }
 
 .button-animation:focus {
@@ -73,13 +60,7 @@
 }
 
 .button-animation:focus-visible {
-  box-shadow: 2px 2px 0 var(--color-main);
-  transition: box-shadow 0.3s ease;
-}
-
-.button-animation:hover::before {
-  transform: scaleX(1);
-  transition: transform 0.5s ease-in-out;
+  box-shadow: 2px 2px 0 var(--main-color);
 }
 
 .sparks {
@@ -87,27 +68,27 @@
 }
 
 .contour {
-  fill: var(--color-main);
+  fill: var(--main-color);
   transition: fill 0.1s linear;
 }
 
 .main-body {
-  fill: var(--color-accent);
+  fill: var(--accent-color);
   transition: fill 0.3s linear;
 }
 
 .core {
-  fill: var(--color-accent);
+  fill: var(--accent-color);
   transition: fill 0.3s 0.03s linear;
 }
 
 .card__icon-button:hover .main-body {
-  fill: var(--color-main);
+  fill: var(--main-color);
   transition: fill 0.3s 0.05s linear;
 }
 
 .card__icon-button:hover .core {
-  fill: var(--color-main);
+  fill: var(--main-color);
   transition: fill 0.3s linear;
 }
 
